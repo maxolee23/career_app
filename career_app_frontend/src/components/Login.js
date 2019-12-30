@@ -46,7 +46,7 @@ class Login extends Component {
           <Form inverted onSubmit={(e) => this.login(e)}>
             <Form.Group widths='equal'>
               <Form.Input fluid label='Username' placeholder='Username' onChange={(e)=> this.handleChange(e)} name="username" type="text"/>
-              <Form.Input fluid label='Password' placeholder='Password' />
+              <Form.Input fluid label='Password' placeholder='Password' type="password"/>
             </Form.Group>
             <Form.Checkbox label='I agree to the Terms and Conditions' />
             <Button type='submit' onChange={(e)=> this.handleChange(e)} >Submit</Button>
