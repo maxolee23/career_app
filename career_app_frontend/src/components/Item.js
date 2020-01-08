@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 // import { List } from 'semantic-ui-react'
 // import {Link} from 'react-router-dom'
-import { List, Segment, Divider } from 'semantic-ui-react'
+import '../App.css';
+import { List, Segment, Divider, Checkbox } from 'semantic-ui-react'
 import NavBar from './NavBar'
 
 const dummy = [
@@ -43,6 +44,7 @@ class Item extends Component {
 
     render() {
         console.log('props in Career', this.props.location.state)
+        debugger
         return (
             <div>
                 <div>
@@ -50,11 +52,19 @@ class Item extends Component {
                         <Segment style={{ minHeight: '100vh', paddingLeft: 70, paddingRight: 70 }} inverted>
                             <NavBar history={this.props.history} />
                             <Divider />
+                        
 
                             <h1>{this.props.location.state.career.name}</h1>
                             <List inverted relaxed bulleted>
-                                <h4>{this.props.location.state.items.map((item) =>
+                                {this.props.location.state.career.items ? 
+                                <h4>{this.props.location.state.career.items.map((item) =>
                                     <List.Item><List.Content><List.Header>{item.name}</List.Header></List.Content></List.Item>)}</h4>
+
+                                : 
+                                
+                                <h4 className="item-text">{this.props.location.state.items.map((item) =>
+                                    <List.Item><List.Content><List.Header><Checkbox label = {item.name} /></List.Header></List.Content></List.Item>)}</h4>
+                                }
                             </List>
                         </Segment>
                         :

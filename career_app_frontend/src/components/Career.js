@@ -23,6 +23,8 @@ class Career extends Component {
 
     render() {
         // console.log('props in Career', this.state.careers)
+        // console.log(this.props.location.state.category.careers)
+        // debugger
         return (
             <div>
                 {localStorage.token ?

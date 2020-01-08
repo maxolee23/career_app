@@ -6,6 +6,7 @@ import Signup from './components/Signup'
 import Career from './components/Career';
 import Item from './components/Item';
 import About from './components/About';
+import Home from './components/Home';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import 'semantic-ui-css/semantic.min.css';
 // import NavBar from './components/NavBar'
@@ -25,6 +26,7 @@ class App extends Component {
     <Route path='/careers' component={Career}/>
     <Route path='/items' component={Item}/>
     <Route path='/about' component={About}/>
+    <Route path='/home' component = {Home}/>
     </Switch>
     </BrowserRouter>
   );

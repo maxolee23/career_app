@@ -30,7 +30,9 @@ class Signup extends Component {
     render(){
         return(
             // <FormTextArea>Sign up</FormTextArea>
-            <Segment inverted>
+            <div style={{padding: '20px'}}>
+            <Segment inverted style={{minHeight: '100vh'}}>
+                <h1>Register now</h1>
           <Form inverted onSubmit={(e) => this.signUp(e)}>
             <Form.Group widths='equal'>
               <Form.Input fluid label='Username' placeholder='Username' onChange={(e)=> this.handleChange(e)} name="username" type="text"/>
@@ -39,6 +41,7 @@ class Signup extends Component {
             <Button type='submit' onChange={(e)=> this.handleChange(e)} >Sign up</Button>
           </Form>
         </Segment>
+        </div>
             // <div>
             //     <h2>Signup</h2>
             //     <form onSubmit={(e) => this.signUp(e)}>

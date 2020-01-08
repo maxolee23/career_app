@@ -27,7 +27,7 @@ class Login extends Component {
             console.log(userInfo)
             localStorage.setItem("token", userInfo.token)
             if(userInfo.token){
-                this.props.history.push('/categorys')
+                this.props.history.push('/home')
             }
         })
     }
@@ -42,20 +42,26 @@ class Login extends Component {
     render(){
         return(
             <div>
-            <Segment inverted>
+            <Segment inverted style={{minHeight: '100vh'}} >
+                <h1>FindYourCareer</h1>
+                
           <Form inverted onSubmit={(e) => this.login(e)}>
             <Form.Group widths='equal'>
+                <i className="user icon"></i>
               <Form.Input fluid label='Username' placeholder='Username' onChange={(e)=> this.handleChange(e)} name="username" type="text"/>
+              <i className="lock icon"></i>
               <Form.Input fluid label='Password' placeholder='Password' type="password"/>
             </Form.Group>
             <Form.Checkbox label='I agree to the Terms and Conditions' />
             <Button type='submit' onChange={(e)=> this.handleChange(e)} >Submit</Button>
           </Form>
-        </Segment>
+        
 
         <Fragment>
-        <Button positive onClick={()=> this.signupBtn()}>Sign up</Button>
+            <h3>Don't have an account? Sign up here!</h3>
+        <Button primary onClick={()=> this.signupBtn()}>Sign up</Button>
         </Fragment>
+        </Segment>
         </div>
             // <div>
             //     <h2>Login</h2>

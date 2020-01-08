@@ -5,6 +5,10 @@ import {Button} from 'semantic-ui-react'
 
 class NavBar extends Component {
 
+  home = () => {
+    this.props.history.push('/home')
+  }
+
   logout = () => {
     localStorage.clear();
     this.props.history.push('/login')
@@ -22,9 +26,9 @@ class NavBar extends Component {
     return (
         <div style={{display: 'flex'}}>
         <h1 style={{width: '55%'}}>FindMyCareer</h1>
-    <h1 style={{width: '12%', height: '30%'}}>Hello, user</h1>
+      <Button style={{width: '12'}} onClick={() => this.home()}>Home</Button>
       <Button style={{width: '12%' }} onClick = {() => this.about()}>About</Button>
-      <Button style={{width: '12%'}} onClick = {() => this.category()}>Categories</Button>
+      <Button primary style={{width: '12%'}} onClick = {() => this.category()}>Categories</Button>
         <Button style={{width: '12%'}} align="right" negative onClick={() => this.logout()}>Log Out</Button>
         </div>
     );
