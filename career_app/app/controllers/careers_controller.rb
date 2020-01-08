@@ -4,4 +4,6 @@ class CareersController < ApplicationController
         render json: @careers, only: [:id, :name], 
         include: [:items, :users, :categorys]
     end
+
+
 end
